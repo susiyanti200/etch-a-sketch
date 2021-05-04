@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #04aa6d;
+  --padding-size: 1rem;
+}
+
+body {
+  font-family: "VT323", monospace;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.controls {
+  padding-top: var(--padding-size);
+  padding-right: var(--padding-size);
+  padding-left: var(--padding-size);
+}
+.etch-area {
+  height: 100vmin;
+  width: 100vmin;
+  padding: var(--padding-size);
+  display: grid;
+}
+
+.etch-area div {
+  border: 1px solid var(--color-primary);
+}
+
+button {
+  font-family: "VT323", monospace;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  letter-spacing: 0.125rem;
+  margin-bottom: 0.5em;
+  background: none;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 0.5em;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+button:active {
+  background-color: var(--color-primary);
+  box-shadow: 0 5px #666;
+  transform: translateY(0.125rem);
+}
+
+/* The input range */
+.slidecontainer {
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.range-slider:hover {
+  opacity: 1;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+.range-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+@media (orientation: landscape) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-list {
+    display: grid;
+    grid-row: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+  }
+
+  .controls {
+    padding-right: 0;
+  }
+
+  button {
+    margin-bottom: 0;
+  }
+}
